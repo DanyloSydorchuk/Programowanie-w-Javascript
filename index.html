@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="a"><br />
+    <input type="text" id="b"><br />
+    <input type="text" id="c"><br />
+    <input type="text" id="d"><br />
+    <button id="przelicz">Przelicz</button><br />
+    <span>AVG: </span><span id="AVG"></span><br />
+    <span>SUM: </span><span id="SUM"></span><br />
+    <span>MIN: </span><span id="MIN"></span><br />
+    <span>MAX: </span><span id="MAX"></span>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+        let a,b,c,d,avg,sum,min,max
+        const select = selector => document.querySelector(selector)
+        function start(){
+            const przeliczButton = document.querySelector("#przelicz")
+            przeliczButton.addEventListener('click',przelicz)
+            a = document.querySelector('#a')
+            b = document.querySelector('#b')
+            c = document.querySelector('#c')
+            d = document.querySelector('#d')
+            avg = document.querySelector('#AVG')
+            sum = document.querySelector('#SUM')
+            min = document.querySelector('#MIN')
+            max = document.querySelector('#MAX')
+        }
+        //const przeliczButton = document.querySelector('button')
+        // const a = document.getElementById('a')
+        // const b = document.getElementById('b')
+        // const c = document.getElementById('c')
+        // const d = document.getElementById('d')
+        // const avg = document.getElementById('AVG')
+        // const sum = document.getElementById('SUM')
+        // const min = document.getElementById('MIN')
+        // const max = document.getElementById('MAX')
+        // przeliczButton.addEventListener('click',przelicz)
+        function przelicz(){
+            const table = [parseInt(a.value),parseInt(b.value),parseInt(c.value),parseInt(d.value)]
+            //avg.innerText = table.reduce()
+            //console.log(a.value)
+            sum.innerText = table[0]+table[1]+table[2]+table[3]
+            avg.innerText = (table[0]+table[1]+table[2]+table[3])/table.length
+            min.innerText = Math.min(table[0],table[1],table[2],table[3])
+            max.innerText = Math.max(table[0],table[1],table[2],table[3])
+        }
+    </script>
+</body>
+</html>
