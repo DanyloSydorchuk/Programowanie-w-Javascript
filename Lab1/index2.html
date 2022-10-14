@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="containter">
+        <input type="text" id="input1" value="0"><br />
+        <input type="text" id="input2" value="0"><br />
+        <input type="text" id="input3" value="0"><br />
+    </div>
+    <button id="addInput">Dodaj pole</button><button id="removeInput">Usuń pole</button><br />
+    <span>AVG: </span><span id="AVG"></span><br />
+    <span>SUM: </span><span id="SUM"></span><br />
+    <span>MIN: </span><span id="MIN"></span><br />
+    <span>MAX: </span><span id="MAX"></span>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+        let container,avg,sum,min,max,counter
+        const select = selector => document.querySelector(selector)
+        function start(){
+            counter=3
+            avg = select('#AVG')
+            sum = select('#SUM')
+            min = select('#MIN')
+            max = select('#MAX')
+            container = select('#container')
+            select('#addInput').addEventListener('click',addInput)
+            select('#removeInput').addEventListener('click',removeInput)
+        }
+        function przelicz(){
+            const table = [parseInt(a.value),parseInt(b.value),parseInt(c.value),parseInt(d.value)]
+            sum.innerText = table[0]+table[1]+table[2]+table[3]
+            avg.innerText = (table[0]+table[1]+table[2]+table[3])/table.length
+            min.innerText = Math.min(table[0],table[1],table[2],table[3])
+            max.innerText = Math.max(table[0],table[1],table[2],table[3])
+        }
+        function addInput(){
+            const input = container.createElement('input')
+            counter++
+            input.id = 'input'+counter
+            container.appendChild(input)
+        }
+    </script>
+</body>
+</html>
