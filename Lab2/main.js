@@ -1,44 +1,65 @@
+
+
 document.addEventListener("DOMContentLoaded", start)
+
+//images[i].style.display ='block'
 
 const select = selector => document.querySelector(selector)
         function start(){
-            let i=0
-            select('#next').addEventListener('click',nextSlide)
-            select('#back').addEventListener('click',backSlide)
-            const buttons = document.querySelectorAll('button')
             
-            const images = document.querySelectorAll('img')
-            if(i==images.length){
-                i==0
-            }
-            images[i].style.display ='block'
-            console.log(images.length)
-            // setInterval(function(){
-            //     console.log('slide '+ i)
-            //     images[i].style.display = 'block'
-            //     images[i].style.display = 'none'
-            //     i++
-            //     if (i==images.length)
-            //     {
-            //         i=0
-            //     }
-            //   }, 2000)
+            //const images = document.querySelectorAll('img')
+            let i = 1
+            
+            // for(let x=0;x<buttons.length;x++){
+            //     buttons[x].nodeValue
+                
+            // }
+            const buttons = document.querySelectorAll('.lpButtons').forEach((button,buttonIndex)=>
+            {
+                button.addEventListener('click', ()=>{
+                    i=button.value
+                    displaySlides(i)
+                })
+            })
 
-              function nextSlide(){
-                console.log('click next')
-                images[i].style.display ='none'
+            setInterval(function(){
+                const images = document.querySelectorAll('img')
+                displaySlides(i)
                 i++
-                console.log('slide '+ i)
+              }, 3000)
+            
+
+            select('#next').addEventListener('click',()=>
+            {
+                i++
+                displaySlides(i)
+            })
+            select('#back').addEventListener('click',()=>
+            {
+                i--
+                displaySlides(i)
+            })
+
+            function displaySlides(num){
+                
+                const images = document.querySelectorAll('img')
+                if(num>images.length) {i=1}
+                if(num<1) { i = images.length}
+                for (let x= 0; x<images.length;x++){
+                    images[x].style.display = "none"
+                }
+                images[i-1].style.display = "block"
+                console.log('Display image nr. '+i)
                 
             }
-    
-            function backSlide(){
-                console.log('click back')
-                i++
-                images[i].style.display ='block'
-            }
 
+            
 
+            
         }
 
+
+
+
+        
         
