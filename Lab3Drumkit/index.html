@@ -20,6 +20,41 @@
     <button id="startRecord">Start recording</button>
     <button id="stopRecord">Stop recording</button>
 
+    <div style="display: grid;margin:100px auto;width:50%">
+        <button id="sound1">Kanał 1</button>
+        <button id="sound2">Kanał 2</button>
+        <button id="sound3">Kanał 3</button>
+        <button id="sound4">Kanał 4</button>
+        <button id="soundAll">Kanał ALL</button>
+    </div>
+    <div style="display: grid;margin:100px auto;width:50%">
+        <table>
+            <tr>
+                <td><input type="checkbox" name="sound1" id="sound1check"></td>
+                <td>Kanał 1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="sound2" id="sound2check"></td>
+                <td>Kanał 2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="sound3" id="sound3check"></td>
+                <td>Kanał 3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="sound4" id="sound4check"></td>
+                <td>Kanał 4</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <Button id="play">Play</Button>
+                    <button>Record Start</button>
+                    <button>Record Stop</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
     <script src="drumkit.js"></script>
 
 </body>
