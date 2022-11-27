@@ -1,0 +1,24 @@
+#notes{
+    display:flex;
+    flex-wrap: wrap;
+
+}
+#notes div{
+    padding:20px;
+    margin:20px;
+    position: relative;
+    height:200px;
+    width:200px;
+    border: 1px solid black
+}
+
+.title{
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+}
+
+.date{
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+}
