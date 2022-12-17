@@ -30,8 +30,9 @@ const asyncAdd = async (a,b) => {
         asyncAdd(sum,tab[i]).then((data)=>{
           sum=data
           console.log(data)
-        }).catch((e) => console.log(e))
+        })
       }
+
     }
   }
 
