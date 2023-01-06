@@ -26,6 +26,28 @@
 </head>
 <body>
     <div id="settings">
+        <table>
+            <tr>
+                <td>Radius kulki:</td>
+                <td><input type="range" name="Radius" id="radius" min="1" max="30" value="15" onchange="showVal('#radiusScore',this.value)"></td>
+                <td id="radiusScore"></td>
+            </tr>
+            <tr>
+                <td>Ilość kulek:</td>
+                <td><input type="range" name="Ilość" id="ilosc" min="1" max="100" value="25" onchange="showVal('#iloscScore',this.value)"></td>
+                <td id="iloscScore"></td>
+            </tr>
+            <tr>
+                <td>Odległość między kulkami:</td>
+                <td><input type="range" name="Odległość" id="odleglosc" min="1" max="100" value="25" onchange="showVal('#odlegloscScore',this.value)"></td>
+                <td id="odlegloscScore"></td>
+            </tr>
+            <tr>
+                <td colspan="3"><button id="start">Start</button>
+                <button id="reset">Reset</button>
+                <button id="stop">Stop</button></td>
+            </tr>
+        </table>
         
     </div>
     <canvas width="400px" height="600px">
