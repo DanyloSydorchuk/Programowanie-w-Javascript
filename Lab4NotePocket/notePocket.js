@@ -15,7 +15,7 @@
 let notes = []
 let counter = 0;
 
-const notesDiv = document.querySelector('#notes')
+const notesDiv = document.querySelector('#notes');
 const submit = document.querySelector('#submit');
 const clear = document.querySelector('#clear');
 const title = document.querySelector('#title');

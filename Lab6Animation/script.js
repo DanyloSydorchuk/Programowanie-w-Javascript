@@ -37,6 +37,18 @@ Ball.prototype.update = function(){
   }
 }
 
+Ball.prototype.checkDistance = function(){
+  for (let i = 0; i < balls.length; i++){
+    if(this.x<=balls[i].x-300||this.y<=balls[i].y-600){
+      ctx.beginPath()
+      ctx.moveTo(this.x,this.y)
+      ctx.lineTo(balls[i].x,balls[i].y)
+      ctx.closePath()
+      ctx.stroke()
+    }
+  }
+}
+
 let balls=[];
 
 function loop(){
@@ -50,19 +62,9 @@ function loop(){
   for (let i = 0; i < balls.length; i++) {
     balls[i].draw();
     balls[i].update();
-    for (let j = 0; j < balls.length; j++) {
-      if((balls[i].x+10)<=balls[j].x){
-        ctx.beginPath()
-        ctx.moveTo(balls[i].x,balls[i].y)
-        ctx.lineTo(balls[j].x,balls[j].y)
-        ctx.closePath()
-        ctx.stroke()
-      }
-        
-      
-      
-    }
+    balls[i].checkDistance();  
   }
+  
   raf = requestAnimationFrame(loop);
 }
 
