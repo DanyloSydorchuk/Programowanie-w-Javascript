@@ -74,15 +74,18 @@ function loop(){
 
  start.addEventListener("click", (e) => {
    if(indraw==0){
+    canvas.width=document.querySelector('#szerokosc').value
+    canvas.height=document.querySelector('#wysokosc').value
      raf = window.requestAnimationFrame(loop);
    }
    
  });
  reset.addEventListener("click", (e) => { // z każdym klieknięciem kulki poruszają się szybciej
    if(indraw==1){
-     balls = []
-     console.log(balls)
-     raf = window.requestAnimationFrame(loop);
+    canvas.width=document.querySelector('#szerokosc').value
+    canvas.height=document.querySelector('#wysokosc').value
+    balls = []
+    raf = window.requestAnimationFrame(loop);
    }
  });
 

@@ -7,28 +7,30 @@
     <title>Document</title>
     <style>
         body{
-            display: flex;
-            justify-content: center;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
         #settings{
             background-color: azure;
             border:1px solid black;
-            width:400px;
-            height: 600px;
-            
+            width:350px;
+            position: absolute;
+            opacity: 0.05;
+        }
+        #settings:hover{
+            opacity: 1;
+            transition:0.5s;
         }
         h2{
             text-align: center;
             border-bottom: 1px solid black;
-            margin-bottom: 100px;
         }
         table{
             width:90%;
-            margin:5%;
+            margin:50px auto;
         }
         td{
             min-width:20px;
+            padding:10px;
         }
         button{
             width:100px;
@@ -40,6 +42,7 @@
         canvas{
             background-color: blanchedalmond;
             border:1px solid black;
+            z-index: -200;
         }
     </style>
 </head>
@@ -63,9 +66,19 @@
                 <td id="odlegloscScore"></td>
             </tr>
             <tr>
-                <td colspan="3"><button id="start">Start</button>
-                <button id="reset">Reset</button>
-                <button id="stop">Stop</button></td>
+                <td>Szerokość okna</td>
+                <td><input type="number" name="Szerokość" id="szerokosc" value="400"></td>
+            </tr>
+            <tr>
+                <td>Wysokość okna</td>
+                <td><input type="number" name="Wysokość" id="wysokosc" value="600"></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align:center">
+                    <button id="start">Start</button>
+                    <button id="reset">Reset</button>
+                <!-- <button id="stop">Stop</button> -->
+                </td>
             </tr>
         </table>
         
