@@ -9,6 +9,7 @@
         body{
             display: flex;
             justify-content: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
         #settings{
             background-color: azure;
@@ -17,15 +18,34 @@
             height: 600px;
             
         }
+        h2{
+            text-align: center;
+            border-bottom: 1px solid black;
+            margin-bottom: 100px;
+        }
+        table{
+            width:90%;
+            margin:5%;
+        }
+        td{
+            min-width:20px;
+        }
+        button{
+            width:100px;
+            height:30px;
+            margin:7px;
+            background-color: lightblue;
+            border:0;
+        }
         canvas{
             background-color: blanchedalmond;
             border:1px solid black;
-           
         }
     </style>
 </head>
 <body>
     <div id="settings">
+        <h2>Ustawienia</h2>
         <table>
             <tr>
                 <td>Radius kulki:</td>
@@ -39,7 +59,7 @@
             </tr>
             <tr>
                 <td>Odległość między kulkami:</td>
-                <td><input type="range" name="Odległość" id="odleglosc" min="1" max="100" value="25" onchange="showVal('#odlegloscScore',this.value)"></td>
+                <td><input type="range" name="Odległość" id="odleglosc" min="20" max="300" value="100" onchange="showVal('#odlegloscScore',this.value)"></td>
                 <td id="odlegloscScore"></td>
             </tr>
             <tr>
@@ -58,6 +78,3 @@
 </body>
 </html>
 
-<!-- 1 kulka
-1 kulka jedzie
-wiele kulek -->

@@ -21,10 +21,13 @@ function showVal(id,newVal){
 
 Ball.prototype.draw = function(){
   ctx.beginPath();
+  ctx.fillStyle = "#FFFFFF"
   ctx.arc(this.x,this.y,this.radius,0,Math.PI*2,true);
   ctx.closePath();
+  ctx.fill();
   ctx.stroke();
 }
+
 Ball.prototype.update = function(){
   this.x += this.vx;
   this.y += this.vy;
@@ -39,7 +42,8 @@ Ball.prototype.update = function(){
 
 Ball.prototype.checkDistance = function(){
   for (let i = 0; i < balls.length; i++){
-    if(this.x<=balls[i].x-300||this.y<=balls[i].y-600){
+    const distance = Math.pow(Math.pow((this.x-balls[i].x),2)+Math.pow((this.y-balls[i].y),2),0.5)
+    if(distance<=document.querySelector('#odleglosc').value){
       ctx.beginPath()
       ctx.moveTo(this.x,this.y)
       ctx.lineTo(balls[i].x,balls[i].y)
@@ -68,21 +72,19 @@ function loop(){
   raf = requestAnimationFrame(loop);
 }
 
-  start.addEventListener("click", (e) => {
-    if(indraw==0){
-      raf = window.requestAnimationFrame(loop);
-    }
-    
-  });
-  reset.addEventListener("click", (e) => { // z każdym klieknięciem kulki poruszają się szybciej
-    if(indraw==1){
-      balls = []
-      console.log(balls)
-      raf = window.requestAnimationFrame(loop);
-    }
-  });
-  
-  
+ start.addEventListener("click", (e) => {
+   if(indraw==0){
+     raf = window.requestAnimationFrame(loop);
+   }
+   
+ });
+ reset.addEventListener("click", (e) => { // z każdym klieknięciem kulki poruszają się szybciej
+   if(indraw==1){
+     balls = []
+     console.log(balls)
+     raf = window.requestAnimationFrame(loop);
+   }
+ });
 
 
 function getRandomInt(min, max) {
