@@ -5,38 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="notePocket.css">
+    <link rel="stylesheet" href="Weather.css">
 </head>
 <body>
     <table>
         <tr>
             <td>
-                <input type="text" name="Title" id="title">
+                Wybierz miasto:
+            </td>
+            <td>
+                <input type="text" name="Miasto" id="miasto">
             </td>
         </tr>
         <tr>
-            <td>
-                <textarea id="content"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <select name="Colors" id="color">
-                    <option value="Red">Red</option>
-                    <option value="Green">Green</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Pink">Pink</option>
-                    <option value="None">None</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td>
+            <td colspan="2">
                 Pinbool:<input type="checkbox" name="Pinbool" id="pinbool">
             </td>
         </tr>
         <tr>
-            <td><button id="submit">Dodaj</button></td>
+            <td colspan="2">
+                <button id="submit">Dodaj</button>
+            </td>
         </tr>
 
     </table>
@@ -48,6 +37,6 @@
     <div>
         <button id="clear">Clear</button>
     </div>
-    <script src="notePocket.js"></script>
+    <script src="Weather.js"></script>
 </body>
 </html>
